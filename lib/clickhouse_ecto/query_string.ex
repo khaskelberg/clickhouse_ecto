@@ -148,7 +148,7 @@ defmodule ClickhouseEcto.QueryString do
           query,
         sources
       ) do
-    [" LIMIT ", expr(expr_offset, sources, query), ", ", expr(expr_limit, sources, query)]
+    [" LIMIT ", expr(expr_limit, sources, query), " OFFSET ", expr(expr_offset, sources, query)]
   end
 
   def boolean(_name, [], _sources, _query), do: []
